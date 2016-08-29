@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <title>Mi sitio personal</title>
+  <link href="{{ STATIC_URL }}/static/css/styles.css" rel="stylesheet" type="text/css">
+<style>
+.article {
+  float: left;
+  margin: 5px;
+  padding: 5px;
+  width: 40%;
+  height: 300px;
+  border: 1px solid black;
+}
+</style>
+ </head>
+ <body>
+
+    <h1>{% block titulo %}{% endblock titulo %}</h1>
+
+        {% url 'contactomail' as contacto %}
+        {% url 'profile' as profile %}
+
+    <div class="radial-menu">
+     <div class="menu-item4"><a href='{{ profile }}'><i class="fa fa-user fa-2x"></i></a></div>
+     <div class="menu-item3"><a href='{{ contacto }}'><i class="fa fa-envelope-o fa-2x"></i></a></div>
+     <div class="menu-item2"><a href=""><i class="fa fa-graduation-cap fa-2x"></i></a></div>
+     <div class="menu-item1"><a href=""><i class="fa fa-code fa-2x"></i></a></div>
+     <div class="mask"><i class="fa fa-home fa-3x"></i></div>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}/static/js/menu_circ.js"></script>
+
+    {% block contenido %} {% endblock contenido %}
+
+ </body>
+
+</html>

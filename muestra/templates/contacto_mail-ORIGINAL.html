@@ -1,0 +1,20 @@
+{% extends "plantilla1.html" %}
+
+{% block titulo %}
+    <h1>Area de diseño </h1>
+{% endblock titulo %}
+{% block contenido %}
+
+<div id="frm">
+    <form id="formulario" method="post">{% csrf_token %}
+    <ul>
+
+    {{ formulario.as_p }}
+
+    </ul>
+
+    <input type="submit" name="submit" value="Enviar">
+    </form>
+</div>
+
+{% endblock contenido %}

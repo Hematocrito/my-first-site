@@ -1,0 +1,11 @@
+{% extends "plantilla1.html" %}
+
+{% block content %}
+
+    <form action="contacto" method='POST'>{% csrf_token %}
+    {{ form.as_ul }}
+
+        <input type="submit" value="Enviar" />
+    </form>
+
+{% endblock %}

@@ -1,4 +1,4 @@
-"""EstudioVAlpha URL Configuration
+"""PlacasInicial URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.8/topics/http/urls/
@@ -16,12 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+
 admin.autodiscover()
 
 
 urlpatterns = [
-    url(r'^$', 'lawyer.views.inicio', name='inicio'),
-    url(r'^legal/', 'lawyer.views.legal', name='legal'),
-    url(r'^abogados/', 'lawyer.views.abogados', name='abogados'),
-    url(r'^contactomail/', 'lawyer.views.contactomail', name='contactomail'),
+    url(r'^$', 'muestra.views.mostrarTexto', name='index'),
+    url(r'^contactomail/', 'muestra.views.contactomail', name='contactomail'),
+    url(r'^profile/', 'muestra.views.profile', name='profile'),
 ]
