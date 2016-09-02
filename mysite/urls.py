@@ -1,4 +1,4 @@
-"""PlacasInicial URL Configuration
+"""mysite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.8/topics/http/urls/
@@ -13,15 +13,10 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import url
+from django.conf.urls import include, url
 from django.contrib import admin
 
-
-admin.autodiscover()
-
-
 urlpatterns = [
-    url(r'^$', 'muestra.views.mostrarTexto', name='index'),
-    url(r'^contactomail/', 'muestra.views.contactomail', name='contactomail'),
-    url(r'^profile/', 'muestra.views.profile', name='profile'),
+    url(r'^admin/', include(admin.site.urls)),
+	url(r'^huyamos/', include('polls.urls')),
 ]
